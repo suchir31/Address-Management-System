@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{%block content%}
+<h4>Update record</h4>
+
+<div class="insertc">
+    <form class="row g-3" action="" method="POST">
+        {%csrf_token%}
+        <div class="col-12">
+            Name :  {{form.username}}
+        </div>
+        <div class="col-12">
+            <label for="inputPassword4" class="form-label">Email</label>
+            {{form.email}}
+        </div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">Address</label>
+            {{form.address}}
+        </div>
+        <br>
+        <div class="col-12">
+            <button type="submit" class="btn btn-success">update record</button><br><br>
+
+        </div>
+    </form>
+    <div>
+        <a href="{%url 'profile' user_id=user_id %}"><button type="submit" class="btn btn-success">SHOW DETAILS</button></a>
+    </div>
+</div>
+{%endblock%}
